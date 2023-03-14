@@ -30,4 +30,8 @@ public class ClienteService {
 
     }
 
+    public List<Cliente> buscarNombres(String nombres){
+        return clRepo.findClienteByNombresLike("%"+nombres+"%");
+    }
+
 }

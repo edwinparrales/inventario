@@ -22,4 +22,9 @@ public class ClienteController {
     public ResponseEntity<Cliente> crear(@RequestBody Cliente cliente){
         return new ResponseEntity<>(clService.crear(cliente),HttpStatus.CREATED);
     }
+
+    @GetMapping("/listar/nombres/{nombres}")
+    public ResponseEntity<List<Cliente>> listarNombres(@PathVariable(name = "nombres") String nombres){
+        return new ResponseEntity<>(clService.buscarNombres(nombres),HttpStatus.OK);
+    }
 }
